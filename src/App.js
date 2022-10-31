@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import '../src/App.scss'
+import logo from './assets/images/logo/BrainFlix-logo.svg';
+import searchLogo from './assets/images/icons/search.svg'
+import imageMohan from './assets/images/Mohan-muruge.jpg'
+import uploadIcon from './assets/images/icons/upload.svg'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header className='brainflix-header'>
+        <img className='brainflix-header__logo' src={logo} alt='logo' />
+        <div className='brainflix-header__search'>
+          <form className='brainflix-header__search-form'>
+            <input className='brainflix-header__search-bar' type={'text'}
+              placeholder='Search' />
+          </form>
+          <img className='brainflix-header__mohan' src={imageMohan} alt='Mohan profile' />
+        </div>
+        <button className='brainflix-header__button'><img src={uploadIcon} alt='a icon for upload' />UPLOAD</button>
       </header>
-    </div>
+    </div >
   );
 }
 
