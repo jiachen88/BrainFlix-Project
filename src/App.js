@@ -15,9 +15,11 @@ function App() {
           </form>
           <img className='brainflix-header__mohan' src={imageMohan} alt='Mohan profile' />
         </div>
-        {/*  */}
+     
         <button className='brainflix-header__button'>UPLOAD</button>
-      </header>
+        <img className='brainflix-header__mohan-tablet' src={imageMohan} alt='Mohan profile' />
+
+      </header >
     </div >
   );
 }
