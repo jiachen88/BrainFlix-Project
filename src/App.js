@@ -95,19 +95,18 @@ function App() {
           </div>
         })}
       </article>
-
-      {detailedVideoData.filter(video => video.id !== activeDetailedVideo.id).map((data, id) => {
-        return <aside className='brainflix-next' key={id}>
-          <h2 className='brainflix-next__title'>NEXT VIDEO</h2>
-          <div className='brainflix-next__container'>
+      <aside className='brainflix-next' >
+        <h2 className='brainflix-next__title'>NEXT VIDEOS</h2>
+        {detailedVideoData.filter(video => video.id !== activeDetailedVideo.id).map((data, id) => {
+          return <div key={id} className='brainflix-next__container'>
             <img onClick={() => handleVideoClick(data.id)} key={data.id} className='brainflix-next__video' src={data.image} alt='Next Video preview' />
             <div className='brainflix-next__container-small'>
               <h2 className='brainflix-next__video-title'>{data.title}</h2>
               <p className='brainflix-next__video-channel'>{data.channel}</p>
             </div>
           </div>
-        </aside>
-      })}
+        })}
+      </aside>
     </div >
   );
 }

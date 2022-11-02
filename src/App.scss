@@ -264,7 +264,41 @@
 }
 
 .brainflix-next {
+    padding: 0rem 1rem;
+
+    &__title {
+        font-weight: 500;
+        color: #afafaf;
+        font-size: 1rem;
+        padding-top: 1rem;
+    }
+
     &__video {
-        width: 100%;
+        width: 35%;
+        height: 5rem;
+        object-fit: fill;
+        padding-right: .5rem;
+        border-radius: .25rem;
+
+        &-channel {}
+
+        &-title {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        padding: .2rem 0rem;
+        align-items: center;
+        justify-content: space-between;
+
+
+        &-image {}
+
+        &-small {
+            width: 60%;
+        }
     }
 }
