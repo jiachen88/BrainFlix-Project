@@ -1,3 +1,4 @@
+// Importing Assets
 import { useState } from 'react';
 import '../src/App.scss'
 import logo from './assets/images/logo/BrainFlix-logo.svg';
@@ -7,12 +8,15 @@ import detailedVideoData from './data/video-details.json'
 import viewsIcon from './assets/images/icons/views.svg'
 import likesIcon from './assets/images/icons/likes.svg'
 
-
+// useState on Video.Json, and Video-details.Json
 function App() {
-  const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[0])
-  const [activeVideo, setActiveVideo] = useState(videoData[0]);
+  const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[3])
+  const [activeVideo, setActiveVideo] = useState(videoData[3]);
   const activeDate = new Date(activeDetailedVideo.timestamp).toLocaleDateString();
-  console.log(activeDate)
+  const activeComment = activeDetailedVideo.comments;
+  const activeCommentDate = new Date(activeDetailedVideo.comments.timestamp).toLocaleDateString();
+  console.log(activeComment)
+  // Handle CLick for active video
   const handleVideoClick = (id) => {
     const foundVideo = videoData.find(videoObject => videoObject.id === id);
     setActiveVideo(foundVideo);
@@ -59,19 +63,39 @@ function App() {
       </main>
       {/* Comments Section for Active Video */}
       <section className='brainflix-comments'>
+        {/* Number of Comments */}
         <h2 className='brainflix-comments__counter'>{activeDetailedVideo.comments.length} Comments</h2>
+        {/* Large Comments Container */}
         <div className='brainflix-comments__container'>
           <img className='brainflix-comments__mohan' src={imageMohan} alt='Mohan Logo' />
+          {/* Medium Comments Container */}
           <div className='brainflix-comments__container-medium'>
+            {/* Small Comments Container */}
             <div className='brainflix-comments__container-small'>
-              <p className='brainflix-comments__title'>Join The Conversation</p>
-              <textarea className='brainflix-comments__text'></textarea>
+              {/* Text Area */}
+              <p className='brainflix-comments__title'>JOIN THE CONVERSATION</p>
+              <textarea className='brainflix-comments__text' placeholder='Add a New comment'></textarea>
             </div>
+            {/* Comment Submit Button */}
             <button className='brainflix-comments__button'>COMMENT</button>
           </div>
         </div>
       </section>
-    </div>
+
+
+      {activeComment.map((data, id) => {
+        return <div key={id}>
+          <img src={imageMohan} alt='Mohan'></img>
+          <div>
+            <div>
+              <h2>{data.name}</h2>
+              <p>{activeCommentDate}</p>
+            </div>
+            <p>{data.comment}</p>
+          </div>
+        </div>
+      })}
+    </div >
   );
 }
 
