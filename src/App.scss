@@ -41,6 +41,9 @@
             padding: 0rem 2rem;
             width: 95%;
             height: 2.5rem;
+            border-radius: .25rem;
+            border: 1px solid #e1e1e1;
+            background-color: #fafafa;
 
             @include tablet {
                 margin-bottom: 1rem;
@@ -102,7 +105,7 @@
         display: flex;
         flex-direction: column;
         padding-left: 1rem;
-        padding-right: 2rem;
+        padding-right: 1rem;
 
         &-title {
             margin-bottom: 1rem;
@@ -114,6 +117,7 @@
             border-top: 1px solid black;
             border-bottom: 1px solid black;
             padding: 1rem 0rem;
+            padding-right: 1rem;
         }
 
         &-publisher {
@@ -125,6 +129,78 @@
             display: flex;
             flex-direction: column;
         }
+
+        &-channel {
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        &-date {
+            color: #e1e1e1;
+        }
+
+        &-views {
+            color: #e1e1e1;
+            margin-bottom: 1rem;
+        }
+
+        &-likes {
+            color: #afafafa;
+        }
+    }
+}
+
+.brainflix-comments {
+    padding: 0rem 1rem;
+
+    &__counter {
+        font-size: 1rem;
     }
 
+    &__mohan {
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    &__title {
+        margin: .5rem 0rem;
+    }
+
+    &__text {
+        resize: none;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 5rem;
+        border-radius: .25rem;
+    }
+
+    &__button {
+        height: 2rem;
+        background: url('./assets/images/icons/add_comment.svg');
+        background-color: #0095ff;
+        color: white;
+        background-repeat: no-repeat;
+        background-position: 1rem;
+        border: none;
+        border-radius: .25rem;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+
+        &-medium {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &-small {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
