@@ -10,16 +10,16 @@ import likesIcon from './assets/images/icons/likes.svg'
 
 // useState on Video.Json, and Video-details.Json
 function App() {
-  const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[3])
-  const [activeVideo, setActiveVideo] = useState(videoData[3]);
+  const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[1])
+  // const [activeVideo, setActiveVideo] = useState(videoData[1]);
   const activeDate = new Date(activeDetailedVideo.timestamp).toLocaleDateString();
   const activeComment = activeDetailedVideo.comments;
   const activeCommentDate = new Date(activeComment.timestamp).toLocaleDateString()
   console.log(activeCommentDate)
   // Handle CLick for active video
   const handleVideoClick = (id) => {
-    const foundVideo = videoData.find(videoObject => videoObject.id === id);
-    setActiveVideo(foundVideo);
+    const foundVideo = detailedVideoData.find(videoObject => videoObject.id === id);
+    setActiveDetailedVideo(foundVideo);
   }
 
   return (
@@ -41,13 +41,13 @@ function App() {
       </header >
       {/* Video Section */}
       <main className='brainflix-video'>
-        <video className='brainflix-video__content' controls poster={activeVideo.image}></video>
+        <video className='brainflix-video__content' controls poster={activeDetailedVideo.image}></video>
         {/* Channel name, title, likes, and views */}
         <div className='brainflix-video__details'>
-          <h2 className='brainflix-video__details-title'>{activeVideo.title}</h2>
+          <h2 className='brainflix-video__details-title'>{activeDetailedVideo.title}</h2>
           <div className='brainflix-video__details-info'>
             <div className='brainflix-video__details-publisher'>
-              <p className='brainflix-video__details-channel'>By {activeVideo.channel}</p>
+              <p className='brainflix-video__details-channel'>By {activeDetailedVideo.channel}</p>
               <p className='brainflix-video__details-date'>{activeDate}</p>
             </div>
             {/* Likes and Views */}
@@ -96,20 +96,18 @@ function App() {
         })}
       </article>
 
-      {/* {activeDetailedVideo.map((data, id) => { */}
-      {/* return <aside key={id}> */}
-
-
-      {/* </aside> */}
-
-
-
-
-
-
-
-
-      {/* })} */}
+      {detailedVideoData.filter(video => video.id !== activeDetailedVideo.id).map((data, id) => {
+        return <aside className='brainflix-next' key={id}>
+          <h2 className='brainflix-next__title'>NEXT VIDEO</h2>
+          <div className='brainflix-next__container'>
+            <img onClick={() => handleVideoClick(data.id)} key={data.id} className='brainflix-next__video' src={data.image} alt='Next Video preview' />
+            <div className='brainflix-next__container-small'>
+              <h2 className='brainflix-next__video-title'>{data.title}</h2>
+              <p className='brainflix-next__video-channel'>{data.channel}</p>
+            </div>
+          </div>
+        </aside>
+      })}
     </div >
   );
 }
