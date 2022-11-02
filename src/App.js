@@ -3,7 +3,6 @@ import { useState } from 'react';
 import '../src/App.scss'
 import logo from './assets/images/logo/BrainFlix-logo.svg';
 import imageMohan from './assets/images/Mohan-muruge.jpg'
-import videoData from './data/videos.json'
 import detailedVideoData from './data/video-details.json'
 import viewsIcon from './assets/images/icons/views.svg'
 import likesIcon from './assets/images/icons/likes.svg'
@@ -14,7 +13,9 @@ function App() {
   // const [activeVideo, setActiveVideo] = useState(videoData[1]);
   const activeDate = new Date(activeDetailedVideo.timestamp).toLocaleDateString();
   const activeComment = activeDetailedVideo.comments;
-  const activeCommentDate = new Date(activeComment.timestamp).toLocaleDateString()
+  let activeCommentDate = new Date(activeComment.timestamp).toLocaleDateString()
+
+
   console.log(activeCommentDate)
   // Handle CLick for active video
   const handleVideoClick = (id) => {
@@ -88,7 +89,7 @@ function App() {
             <div className='brainflix-feedback__container-medium'>
               <div className='brainflix-feedback__container-small'>
                 <h2 className='brainflix-feedback__name'>{data.name}</h2>
-                <p className='brainflix-feedback__date'>{activeCommentDate}</p>
+                <p className='brainflix-feedback__date'>{data.timestamp}</p>
               </div>
               <p className='brainflix-feedback__comment'>{data.comment}</p>
             </div>
