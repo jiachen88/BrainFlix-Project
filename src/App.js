@@ -14,8 +14,8 @@ function App() {
   const [activeVideo, setActiveVideo] = useState(videoData[3]);
   const activeDate = new Date(activeDetailedVideo.timestamp).toLocaleDateString();
   const activeComment = activeDetailedVideo.comments;
-  const activeCommentDate = new Date(activeDetailedVideo.comments.timestamp).toLocaleDateString();
-  console.log(activeComment)
+  const activeCommentDate = new Date(activeComment.timestamp).toLocaleDateString()
+  console.log(activeCommentDate)
   // Handle CLick for active video
   const handleVideoClick = (id) => {
     const foundVideo = videoData.find(videoObject => videoObject.id === id);
@@ -81,20 +81,35 @@ function App() {
           </div>
         </div>
       </section>
-
-
-      {activeComment.map((data, id) => {
-        return <div key={id}>
-          <img src={imageMohan} alt='Mohan'></img>
-          <div>
-            <div>
-              <h2>{data.name}</h2>
-              <p>{activeCommentDate}</p>
+      <article className='brainflix-feedback'>
+        {activeComment.map((data, id) => {
+          return <div className='brainflix-feedback__container' key={id}>
+            <img className='brainflix-feedback__mohan' src={imageMohan} alt='Mohan'></img>
+            <div className='brainflix-feedback__container-medium'>
+              <div className='brainflix-feedback__container-small'>
+                <h2 className='brainflix-feedback__name'>{data.name}</h2>
+                <p className='brainflix-feedback__date'>{activeCommentDate}</p>
+              </div>
+              <p className='brainflix-feedback__comment'>{data.comment}</p>
             </div>
-            <p>{data.comment}</p>
           </div>
-        </div>
-      })}
+        })}
+      </article>
+
+      {/* {activeDetailedVideo.map((data, id) => { */}
+      {/* return <aside key={id}> */}
+
+
+      {/* </aside> */}
+
+
+
+
+
+
+
+
+      {/* })} */}
     </div >
   );
 }
