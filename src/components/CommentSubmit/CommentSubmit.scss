@@ -67,7 +67,9 @@
         border-bottom: #e1e1e1 solid 1px;
         padding-bottom: 1rem;
 
-        @include tablet {}
+        @include desktop {
+            border-bottom: none;
+        }
 
         &-large {
             display: flex;

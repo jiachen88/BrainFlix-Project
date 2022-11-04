@@ -1,5 +1,6 @@
 import viewsIcon from '../../assets/images/icons/views.svg'
 import likesIcon from '../../assets/images/icons/likes.svg'
+import './MainVideo.scss'
 function MainVideoDetails(props) {
     const activeDate = new Date(props.activeDetailedVideo.timestamp).toLocaleDateString();
     return (<div className='brainflix-video__details'>

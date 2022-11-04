@@ -5,6 +5,10 @@
     padding: 0rem 1rem;
     border-bottom: #e1e1e1 solid 1px;
 
+    @include desktop {
+        border-bottom: none;
+    }
+
 
     &__mohan {
         height: 2rem;
@@ -21,6 +25,13 @@
         align-items: center;
         padding: 1rem 0rem;
         border-bottom: #e1e1e1 solid 1px;
+
+        @include desktop {
+            border-bottom: none;
+            border-top: #e1e1e1 solid 1px;
+        }
+
+
 
 
         &-medium {

@@ -1,3 +1,16 @@
 @use './style/partials/global.scss' as *;
 @use './style/partials/mixins' as *;
 @use './style/partials/variables' as *;
+
+.brainflix-desktop {
+    &__container {
+        @include desktop {
+            width: 70%;
+        }
+    }
+
+    @include desktop {
+        display: flex;
+        padding: 0rem 5rem;
+    }
+}
