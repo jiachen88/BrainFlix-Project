@@ -1,12 +1,15 @@
 import viewsIcon from '../../assets/images/icons/views.svg'
 import likesIcon from '../../assets/images/icons/likes.svg'
 import './MainVideo.scss'
+import './MainVideoDetails'
+import MainVideoDetails from './MainVideoDetails';
 
 function MainVideo(props) {
     const activeDate = new Date(props.activeDetailedVideo.timestamp).toLocaleDateString();
     return (<main className='brainflix-video' >
         <video className='brainflix-video__content' controls poster={props.activeDetailedVideo.image}></video>
         {/* Channel name, title, likes, and views */}
+
         <div className='brainflix-video__details'>
             <h2 className='brainflix-video__details-title'>{props.activeDetailedVideo.title}</h2>
             <div className='brainflix-video__details-info'>

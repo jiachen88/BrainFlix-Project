@@ -16,8 +16,14 @@
     }
 
     &__logo {
-        max-height: 1.56rem;
-        max-width: 7.5rem;
+        height: 1.56rem;
+        width: 7.5rem;
+
+        @include desktop {
+            padding-left: 8rem;
+            width: 25rem;
+            height: auto;
+        }
     }
 
     &__search {
@@ -31,6 +37,10 @@
             border-radius: 4px;
             width: 100%;
 
+            @include tablet {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
         }
 
         &-bar {
@@ -47,8 +57,13 @@
 
             @include tablet {
                 margin-bottom: 1rem;
-                width: 50%;
+                width: 100%;
+            }
 
+            @include desktop {
+                width: 40%;
+                margin-left: 23rem;
+                height: 3rem;
             }
 
         }
@@ -73,7 +88,10 @@
                 display: inline-flex;
             }
 
-
+            @include desktop {
+                width: 3rem;
+                height: 3rem;
+            }
         }
     }
 
@@ -90,8 +108,13 @@
         margin: 1rem 0rem;
 
         @include tablet {
-            width: 30%;
+            width: 40%;
             margin-right: 1rem;
+        }
+
+        @include desktop {
+            width: 25%;
+            height: 3rem;
         }
     }
 }

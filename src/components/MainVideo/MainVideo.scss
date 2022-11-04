@@ -4,6 +4,16 @@
 .brainflix-video {
     &__content {
         width: 100%;
+
+        @include tablet {
+            border-left: black solid 2rem;
+            border-right: black solid 2rem;
+        }
+
+        @include desktop {
+            border-left: black solid 12rem;
+            border-right: black solid 12rem;
+        }
     }
 
     &__details {
