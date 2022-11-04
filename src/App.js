@@ -8,17 +8,10 @@ import MainVideo from './components/MainVideo/MainVideo';
 import CommentSubmit from './components/CommentSubmit/CommentSubmit';
 import CommentsFeedback from './components/CommentsFeedback/CommentsFeedback';
 import NextVideo from './components/NextVideo/NextVideo';
-
-// useState on Video.Json, and Video-details.Json
+// useState on Video-details.Json
 function App() {
   const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[1])
   const activeComment = activeDetailedVideo.comments;
-  // Handle CLick for active video
-  const handleVideoClick = (id) => {
-    const foundVideo = detailedVideoData.find(videoObject => videoObject.id === id);
-    setActiveDetailedVideo(foundVideo);
-  }
-
   return (
     <div>
       {/* brainflix header wrapper */}
@@ -34,5 +27,4 @@ function App() {
     </div >
   );
 }
-
 export default App;

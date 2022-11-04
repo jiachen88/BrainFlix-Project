@@ -4,11 +4,18 @@
 .brainflix-next {
     padding: 0rem 1rem;
 
+
+
     &__title {
         font-weight: 500;
         color: #afafaf;
         font-size: 1rem;
         padding-top: 1rem;
+
+        @include tablet {
+            padding: 2rem 0rem;
+
+        }
     }
 
     &__video {
@@ -18,7 +25,11 @@
         padding-right: .5rem;
         border-radius: .25rem;
 
-        &-channel {}
+        @include tablet {
+            width: 9rem;
+        }
+
+        // &-channel {}
 
         &-title {
             font-weight: 500;
@@ -32,8 +43,13 @@
         align-items: center;
         justify-content: space-between;
 
+        @include tablet {
+            justify-content: flex-start;
+            padding: 1rem 0rem;
+        }
 
-        &-image {}
+
+        // &-image {}
 
         &-small {
             width: 60%;
