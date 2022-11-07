@@ -3,7 +3,10 @@
 
 .brainflix-next {
     padding: 0 1rem;
-    border-left: #efefef solid 1px;
+
+    @include desktop {
+        border-left: #efefef solid 1px;
+    }
 
 
 
