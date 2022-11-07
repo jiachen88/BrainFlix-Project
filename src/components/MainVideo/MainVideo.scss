@@ -1,0 +1,94 @@
+@use '../../style/partials/mixins' as *;
+@use '../../style/partials/variables' as *;
+
+.brainflix-video {
+    &__content {
+        width: 100%;
+
+        @include tablet {
+            border-left: black solid 2rem;
+            border-right: black solid 2rem;
+        }
+
+        @include desktop {
+            border-left: black solid 12rem;
+            border-right: black solid 12rem;
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        &-title {
+            margin-bottom: 1rem;
+        }
+
+        &-info {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #e1e1e1;
+            border-bottom: 1px solid #e1e1e1;
+            padding: 1rem 0rem;
+            padding-right: 1rem;
+
+            @include tablet {
+                border-top: none;
+
+            }
+        }
+
+        &-publisher {
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+            }
+        }
+
+        &-stats {
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+
+            }
+        }
+
+        &-channel {
+            margin-bottom: 1rem;
+            font-weight: 500;
+
+            @include tablet {
+                padding-right: 1rem;
+            }
+        }
+
+        &-description {
+            @include tablet {
+                padding-bottom: 2rem;
+            }
+        }
+
+        &-date {
+            color: #afafaf;
+        }
+
+        &-views {
+            color: #afafaf;
+            margin-bottom: 1rem;
+        }
+
+        &-likes {
+            color: #afafaf;
+
+            @include tablet {
+                padding-left: 1rem;
+            }
+        }
+    }
+}
