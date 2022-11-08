@@ -47,7 +47,7 @@ function Home() {
                 <CommentSubmit imageMohan={imageMohan} activeDetailedVideo={activeDetailedVideo} />
                 <CommentsFeedback imageMohan={imageMohan} activeComment={activeComment} />
             </div>
-            <NextVideo detailedVideoData={detailedVideoData} setActiveDetailedVideo={setActiveDetailedVideo} activeDetailedVideo={activeDetailedVideo} />
+            <NextVideo videos={videos} setSelectedVideo={setSelectedVideo} />
         </div>
     </>
     );
