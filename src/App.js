@@ -5,6 +5,7 @@ import '../src/App.scss'
 import imageMohan from './assets/images/Mohan-muruge.jpg'
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import Upload from './pages/upload';
 // useState on Video-details.Json
 function App() {
 
