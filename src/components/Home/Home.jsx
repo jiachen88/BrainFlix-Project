@@ -13,7 +13,7 @@ import { useParams, Link } from 'react-router-dom';
 function Home() {
     const [videos, setVideos] = useState([]);
     const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[0])
-    const [selectedVideo, setSelectedVideo] = useState(null);
+    const [selectedVideo, setSelectedVideo] = useState([0]);
     const params = useParams();
     const activeComment = activeDetailedVideo.comments;
     useEffect(() => {
@@ -40,10 +40,10 @@ function Home() {
             .catch((error) => console.log(error));
     }, []);
     return (<>
-        <MainVideo activeDetailedVideo={activeDetailedVideo} />
+        <MainVideo selectedVideo={selectedVideo} />
         <div className='brainflix-desktop'>
             <div className='brainflix-desktop__container'>
-                <MainVideoDetails activeDetailedVideo={activeDetailedVideo} />
+                <MainVideoDetails selectedVideo={selectedVideo} />
                 <CommentSubmit imageMohan={imageMohan} activeDetailedVideo={activeDetailedVideo} />
                 <CommentsFeedback imageMohan={imageMohan} activeComment={activeComment} />
             </div>
