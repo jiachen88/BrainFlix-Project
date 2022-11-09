@@ -13,9 +13,10 @@ import { useParams, Link } from 'react-router-dom';
 function Home() {
     const [videos, setVideos] = useState([]);
     const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[0])
-    const [selectedVideo, setSelectedVideo] = useState([0]);
+    const [selectedVideo, setSelectedVideo] = useState([null]);
     const params = useParams();
     const activeComment = activeDetailedVideo.comments;
+    console.log(selectedVideo)
     useEffect(() => {
         console.log('params changed', params);
         if (params.videoId) {

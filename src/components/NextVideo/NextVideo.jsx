@@ -1,6 +1,7 @@
 import './NextVideo.scss'
 import { Link } from 'react-router-dom';
 function NextVideo(props) {
+
     return (<aside className='brainflix-next' >
         <h2 className='brainflix-next__title'>NEXT VIDEOS</h2>
         {props.videos.filter(video => video.id !== props.videos.id).map((data, id) => {
