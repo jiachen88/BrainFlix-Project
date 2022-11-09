@@ -1,5 +1,4 @@
 // Importing Assets
-import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import '../src/App.scss'
 import imageMohan from './assets/images/Mohan-muruge.jpg'

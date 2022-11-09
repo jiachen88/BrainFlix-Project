@@ -1,6 +1,6 @@
 import logo from '../../assets/images/logo/BrainFlix-logo.svg';
 import './Header.scss'
-import { Link } from 'react-router-dom';
+
 
 function Header(props) {
     return (<header className='brainflix-header'>

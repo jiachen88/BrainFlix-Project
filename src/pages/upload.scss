@@ -1,0 +1,26 @@
+@use '../style/partials/mixins' as *;
+@use '../style/partials/variables' as *;
+
+.upload-page {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 1rem;
+    border-top: 1px solid #e1e1e1;
+
+    &__title {
+        font-weight: 500;
+        color: #323232;
+        padding: 1rem 0rem;
+    }
+
+    &__thumbnail {
+        &-title {
+            font-size: 1rem;
+        }
+
+        &-img {
+            max-width: 100%;
+            border-radius: .25rem;
+        }
+    }
+}
