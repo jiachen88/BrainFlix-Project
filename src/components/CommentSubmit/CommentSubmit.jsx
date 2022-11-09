@@ -3,7 +3,7 @@ import './CommentSubmit.scss'
 function CommentSubmit(props) {
     return (<section className='brainflix-comments'>
         {/* Number of Comments */}
-        <h2 className='brainflix-comments__counter'>{props.activeDetailedVideo.comments.length} Comments</h2>
+        <h2 className='brainflix-comments__counter'>{props.activeComment?.length} Comments</h2>
 
         <div className='brainflix-comments__container'>
             <img className='brainflix-comments__mohan' src={props.imageMohan} alt='Mohan Logo' />

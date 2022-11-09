@@ -13,9 +13,9 @@ import { useParams, Link } from 'react-router-dom';
 function Home() {
     const [videos, setVideos] = useState([]);
     const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[0])
-    const [selectedVideo, setSelectedVideo] = useState([null]);
+    const [selectedVideo, setSelectedVideo] = useState([]);
     const params = useParams();
-    const activeComment = activeDetailedVideo.comments;
+    const activeComment = selectedVideo.comments;
     console.log(selectedVideo)
     useEffect(() => {
         console.log('params changed', params);
@@ -25,6 +25,7 @@ function Home() {
                 .then((response) => {
                     console.log(response);
                     setSelectedVideo(response.data)
+                    console.log(selectedVideo)
                 })
                 .catch((error) => console.log(error))
         }
@@ -40,12 +41,13 @@ function Home() {
             })
             .catch((error) => console.log(error));
     }, []);
+
     return (<>
         <MainVideo selectedVideo={selectedVideo} />
         <div className='brainflix-desktop'>
             <div className='brainflix-desktop__container'>
                 <MainVideoDetails selectedVideo={selectedVideo} />
-                <CommentSubmit imageMohan={imageMohan} activeDetailedVideo={activeDetailedVideo} />
+                <CommentSubmit imageMohan={imageMohan} activeComment={activeComment} />
                 <CommentsFeedback imageMohan={imageMohan} activeComment={activeComment} />
             </div>
             <NextVideo videos={videos} setSelectedVideo={setSelectedVideo} />
