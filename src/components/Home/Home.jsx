@@ -1,19 +1,17 @@
 // Importing Assets
 import { useState, useEffect } from 'react';
 import imageMohan from '../../assets/images/Mohan-muruge.jpg'
-import detailedVideoData from '../../data/video-details.json'
 import MainVideo from '../MainVideo/MainVideo';
 import CommentSubmit from '../CommentSubmit/CommentSubmit';
 import CommentsFeedback from '../CommentsFeedback/CommentsFeedback';
 import NextVideo from '../NextVideo/NextVideo';
 import MainVideoDetails from '../MainVideo/MainVideoDetails'
 import axios from 'axios';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, } from 'react-router-dom';
 // useState on Video-details.Json
 function Home() {
     const [videos, setVideos] = useState([]);
-    const [activeDetailedVideo, setActiveDetailedVideo] = useState(detailedVideoData[0])
-    const [selectedVideo, setSelectedVideo] = useState([]);
+    const [selectedVideo, setSelectedVideo] = useState([null]);
     const params = useParams();
     const activeComment = selectedVideo.comments;
     console.log(selectedVideo)
@@ -25,7 +23,6 @@ function Home() {
                 .then((response) => {
                     console.log(response);
                     setSelectedVideo(response.data)
-                    console.log(selectedVideo)
                 })
                 .catch((error) => console.log(error))
         }
@@ -50,7 +47,7 @@ function Home() {
                 <CommentSubmit imageMohan={imageMohan} activeComment={activeComment} />
                 <CommentsFeedback imageMohan={imageMohan} activeComment={activeComment} />
             </div>
-            <NextVideo videos={videos} setSelectedVideo={setSelectedVideo} />
+            <NextVideo videos={videos} setSelectedVideo={setSelectedVideo} selectedVideo={selectedVideo} />
         </div>
     </>
     );
