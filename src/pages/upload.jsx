@@ -1,4 +1,5 @@
 import uploadImage from '../assets/images/Upload-video-preview.jpg'
+import { Link } from 'react-router-dom'
 import './upload.scss'
 function Upload() {
     return (<div className='upload-page'>
@@ -20,10 +21,10 @@ function Upload() {
             </div>
         </div>
         <div className='video-button'>
-            <button className='video-button__publish'>PUBLISH</button>
+            <Link to={'/videos/84e96018-4022-434e-80bf-000ce4cd12b8'}>  <button className='video-button__publish'>PUBLISH</button ></Link>
             <p className='video-button__cancel'>CANCEL</p>
         </div>
-    </div>
+    </div >
     )
 }
 export default Upload
