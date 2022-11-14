@@ -1,7 +1,7 @@
 import './CommentsFeedback.scss'
 function CommentsFeedback(props) {
     return (<article className='brainflix-feedback'>
-        {props.activeComment.map((data, id) => {
+        {props.activeComment?.map((data, id) => {
             return <div className='brainflix-feedback__container' key={id}>
                 <img className='brainflix-feedback__mohan' src={props.imageMohan} alt='Mohan'></img>
                 <div className='brainflix-feedback__container-medium'>
