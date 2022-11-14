@@ -7,20 +7,138 @@
     padding: 0rem 1rem;
     border-top: 1px solid #e1e1e1;
 
+    @include desktop {
+        padding-right: 4rem;
+    }
+
+    &__desktop {
+        @include desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
     &__title {
         font-weight: 500;
         color: #323232;
         padding: 1rem 0rem;
+
+        @include tablet {
+            font-size: 2.5rem;
+        }
     }
 
     &__thumbnail {
         &-title {
             font-size: 1rem;
+            color: #a1a1a1;
+            border-top: solid 1px #e1e1e1;
+            padding-top: 2rem;
+
+            @include desktop {
+                width: 30%;
+            }
         }
 
         &-img {
             max-width: 100%;
             border-radius: .25rem;
+
+            @include tablet {
+                width: 20rem;
+            }
+
+            @include desktop {
+                width: 80%;
+            }
         }
+    }
+}
+
+.video-inputs {
+    @include desktop {
+        width: 80%;
+
+    }
+
+    &__title {
+        @include desktop {
+            margin-bottom: 2rem;
+
+        }
+
+        &-area {
+            width: 100%;
+            resize: none;
+            padding-top: .6rem;
+            padding-left: 1rem;
+            border-radius: .25rem;
+            border-color: #a1a1a1;
+            background-color: #fafafa;
+        }
+
+        &-text {
+            color: #a1a1a1;
+        }
+    }
+
+    &__description {
+        &-area {
+            width: 100%;
+            resize: none;
+            padding-top: .6rem;
+            padding-left: 1rem;
+            border-radius: .25rem;
+            border-color: #a1a1a1;
+            background-color: #fafafa;
+            height: 5rem;
+
+            @include desktop {}
+        }
+
+        &-text {
+            color: #a1a1a1;
+        }
+    }
+}
+
+.video-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: row-reverse;
+        border-top: solid 1px #e1e1e1;
+        margin-top: 1rem;
+    }
+
+    &__publish {
+        width: 100%;
+        margin-top: 1rem;
+        height: 2.5rem;
+        border: none;
+        border-radius: .25rem;
+        color: white;
+        background: url(../assets/images/icons/publish.svg);
+        background-repeat: no-repeat;
+        background-position: 1rem;
+        background-color: #0095ff;
+        margin-bottom: 2rem;
+
+
+        @include tablet {
+            width: 11rem;
+            margin-left: 2rem;
+        }
+
+    }
+
+    &__cancel {
+        color: #0095ff;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        padding-top: 1rem;
     }
 }
