@@ -12,22 +12,21 @@ import { useParams, } from 'react-router-dom';
 function Home() {
     const [videos, setVideos] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState([null]);
-    const { id } = useParams();
+    const params = useParams();
     const activeComment = selectedVideo.comments;
     console.log(selectedVideo)
     useEffect(() => {
-        console.log('id changed', id);
-        let videoId = id || videos[0]?.id
-        if (videoId) {
+        console.log('params changed', params);
+        if (params.videoId) {
             axios
-                .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=fe2c0b72-9d10-4008-b88e-be73ce70ab6e`)
+                .get(`https://project-2-api.herokuapp.com/videos/${params.videoId}?api_key=fe2c0b72-9d10-4008-b88e-be73ce70ab6e`)
                 .then((response) => {
                     console.log(response);
                     setSelectedVideo(response.data)
                 })
                 .catch((error) => console.log(error))
         }
-    }, [id, videos]);
+    }, [params]);
 
     useEffect(() => {
         console.log('Videos Mounted');
