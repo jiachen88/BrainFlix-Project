@@ -19,6 +19,7 @@ function Home() {
         console.log('params changed', params);
         if (params.videoId) {
             axios
+            // replace herokuapp with localhost
                 .get(`https://project-2-api.herokuapp.com/videos/${params.videoId}?api_key=fe2c0b72-9d10-4008-b88e-be73ce70ab6e`)
                 .then((response) => {
                     console.log(response);
