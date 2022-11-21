@@ -19,7 +19,8 @@ function Home() {
         console.log('params changed', params);
         if (params.videoId) {
             axios
-                .get(`https://project-2-api.herokuapp.com/videos/${params.videoId}?api_key=fe2c0b72-9d10-4008-b88e-be73ce70ab6e`)
+                // replace herokuapp with localhost
+                .get(`http://localhost:5000/videos/${params.videoId}`)
                 .then((response) => {
                     console.log(response);
                     setSelectedVideo(response.data)
@@ -31,7 +32,7 @@ function Home() {
     useEffect(() => {
         console.log('Videos Mounted');
         axios
-            .get(`https://project-2-api.herokuapp.com/videos/?api_key=fe2c0b72-9d10-4008-b88e-be73ce70ab6e`)
+            .get(`http://localhost:5000/videos`)
             .then((response) => {
                 console.log(response);
                 setVideos(response.data)
