@@ -1,17 +1,21 @@
 import uploadImage from '../assets/images/Upload-video-preview.jpg'
 import './upload.scss'
+import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
 function Upload() {
+    const navigate = useNavigate();
     function handleFormSubmit(event) {
         event.preventDefault()
         axios.post('http://localhost:5000/videos', {
             title: event.target.title.value,
             description: event.target.description.value
-        })
-        console.log(event.target.title.value)
-        console.log(event.target.description.value)
+        });
+        navigate('/')
+        console.log(event.target.title.value);
+        console.log(event.target.description.value);
+
     }
     return (<div className='upload-page'>
         <h2 className='upload-page__title'>Upload Video</h2>
