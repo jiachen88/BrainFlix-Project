@@ -1,6 +1,6 @@
 import uploadImage from '../assets/images/Upload-video-preview.jpg'
 import './upload.scss'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
